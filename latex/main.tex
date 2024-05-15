@@ -30,9 +30,12 @@
 \newcommand*{\cbox}[1]{\makebox[0pt]{\maxsizebox{3.8in}{!}{#1}}}
 \newcommand*{\lbox}[1]{\makebox[0pt][l]{\maxsizebox{3.8in}{!}{#1}}}
 \newcommand*{\rbox}[1]{\makebox[0pt][r]{\maxsizebox{3.8in}{!}{#1}}}
-\newcommand*{\largefont}{\fontsize{68pt}{0pt}\selectfont}
+\newcommand*{\largefont}{\fontsize{45pt}{0pt}\selectfont}
 \newcommand*{\smallfont}{\fontsize{26pt}{0pt}\selectfont}
+\newcommand*{\smallerfont}{\fontsize{15pt}{0pt}\selectfont}
 \newcommand*{\infofont}{\fontsize{22pt}{0pt}\selectfont}
+\newcommand*{\teenierfont}{\fontsize{10pt}{0pt}\selectfont}
+\newcommand*{\teenyfont}{\fontsize{15pt}{0pt}\selectfont}
 
 %% page setting, currently set to match Avery Name Badges #74459
 \hoffset=-0.75in %adjusting page margin
@@ -44,19 +47,26 @@
 
 %% ticket default setting
 \renewcommand*{\ticketdefault}{%
-  \put(10,2){\lbox{\includegraphics[width=1in]{desc-logo}}}%
-  \put(380,14){\rbox{\includegraphics[width=0.7in]{lsstc-logo}}}%
-  \put(205,29){\cbox{\latinfont\scriptsize Collaboration Meeting, July.~23--27, 2018}}% Update dates as needed
-  \put(205,15){\cbox{\latinfont\scriptsize Carnegie Mellon University}}% Update location as needed
+
+  \put(60,5){\rbox{\includegraphics[width=0.45in]{heads.jpeg}}}%
+ % \put(205,29){\cbox{\latinfont\scriptsize Collaboration Meeting, July.~23--27, 2018}}% Update dates as needed
+  %\put(205,15){\cbox{\latinfont\scriptsize Carnegie Mellon University}}% Update location as needed
 }
 
 %% participant style setting
-\newcommand*{\participant}[5]{\ticket{%
-  \put(200,210){\cbox{#5{\latinfont\bfseries\largefont #1}}}%
-  \put(200,155){\cbox{#5{\latinfont\bfseries\smallfont #2}}}%
-  \put(200,106){\cbox{\latinfont\infofont #3}}%
-  \put(200,62){\cbox{\latinfont\itshape\infofont #4}}%
-}}
+\newcommand*{\participant}[9]{\ticket{%
+\put(350,5){\lbox{\includegraphics[width=0.6in,trim={0.5in 2.5in 0in 2.5in},clip]{stripes_#9.png}}}%
+\put(250,50){\lbox{\includegraphics[width=1.3in]{#7}}}%
+\put(200,280){\cbox{{\latinfont\itshape\teenyfont #5}}}%
+\put(65,15){\lbox{{\latinfont\itshape\teenierfont #6}}}%
+\put(30,120){\lbox{{\latinfont\smallerfont #3}}}%
+  \put(30,180){\lbox{{\latinfont\bfseries\largefont #1}}}%
+  \put(30,150){\lbox{{\latinfont\bfseries\smallfont #2}}}%
+  \put(80,235){\cbox{\latinfont\itshape\teenierfont #4}}%
+ \put(380,25){\rbox{\textcolor{#9}{\latinfont\itshape\teenierfont #8}}}%
+ \put(320,220){\lbox{\includegraphics[width=0.7in]{logo.pdf}}}%
+} % closes ticket
+} % closes newcommand
 
 %% empty ticket (with background)
 \newcommand*{\emptyticket}{\ticket{}}
