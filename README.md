@@ -1,10 +1,7 @@
 # name-tag-guru
 LaTeX template to quickly create beautiful name tags (badges) for collaboration meetings
 
-## Preview
-
-You can preview how your badge would look like [on this page](https://lsstdesc.github.io/name-tag-guru/).
-
+The original code for the badges was created by Yao-Yuan Mao (https://github.com/LSSTDESC/name-tag-guru) and Adrien Helias designed the template badges for the CASCA application.
 ## Usage
 
 - Use your favorite spreadsheet app (e.g., Excel) to create a list of string of
